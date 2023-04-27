@@ -22,9 +22,9 @@ async function checkConnection () {
   }
 }
 
-checkConnection()
+/**checkConnection()*/
 
-/** Clear the index, recreate it, and add mappings 
+/** Clear the index, recreate it, and add mappings */
 async function resetIndex () {
     if (await client.indices.exists({ index })) {
       await client.indices.delete({ index })
@@ -34,7 +34,7 @@ async function resetIndex () {
     await putBookMapping()
   }
   
-/** Add book section schema mapping to ES 
+/** Add book section schema mapping to ES */
 async function putBookMapping () {
     const schema = {
       title: { type: 'keyword' },
@@ -50,4 +50,4 @@ module.exports = {
     client, index, type, checkConnection, resetIndex
 }
   
-*/
+
